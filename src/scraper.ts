@@ -1,4 +1,4 @@
-import { createLogger } from '@shared/logger';
+import { createLogger } from './logger';
 /**
  * Zillow Scraper - Uses Playwright to intercept API calls
  *

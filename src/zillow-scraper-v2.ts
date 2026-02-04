@@ -24,8 +24,8 @@
  */
 
 import { chromium, Browser, BrowserContext, Page, Route, Request } from 'playwright';
-import { PropertyListing, ScraperConfig, ScraperResult, PaginationInfo } from '@shared/types';
-import { ScraperLogger, PerformanceMetrics } from '@shared/logger';
+import { PropertyListing, ScraperConfig, ScraperResult, PaginationInfo } from './types';
+import { ScraperLogger, PerformanceMetrics } from './logger';
 
 /**
  * Raw Zillow listing structure from API
