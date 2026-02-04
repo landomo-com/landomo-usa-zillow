@@ -1,22 +1,55 @@
 {
   "name": "@landomo/scraper-usa-zillow",
   "version": "1.0.0",
-  "type": "module",
-  "description": "Zillow real estate scraper using Playwright with API interception",
-  "main": "dist/index.js",
+  "private": true,
+  "description": "Landomo scraper for Zillow in USA",
+  "main": "src/scraper-zillow.ts",
   "scripts": {
+    "start": "tsx src/scraper-zillow.ts",
+    "coordinator": "tsx src/coordinator-zillow.ts",
+    "worker": "tsx src/worker.ts",
+    "worker:verifier": "tsx src/worker-verifier.ts",
+    "metrics": "tsx src/metrics-server.ts",
+    "queue:stats": "tsx src/queue-stats.ts stats",
+    "queue:clear": "tsx src/queue-stats.ts clear",
+    "queue:retry-failed": "tsx src/queue-stats.ts retry-failed",
+    "queue:show-failed": "tsx src/queue-stats.ts show-failed",
+    "dev": "tsx watch src/scraper-zillow.ts",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "build": "tsc",
-    "start": "tsx src/index.ts",
-    "scrape": "tsx src/scraper.ts",
-    "test:api": "tsx src/test-api.ts"
+    "lint": "eslint src/**/*.ts",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@types/ioredis": "^4.28.10",
+    "@types/pg": "^8.10.0",
+    "axios": "^1.6.0",
+    "dotenv": "^16.0.0",
     "ioredis": "^5.9.2",
-    "playwright": "^1.49.1"
+    "pg": "^8.11.0",
+    "playwright": "^1.58.1",
+    "playwright-extra": "^4.3.6",
+    "prom-client": "^15.1.0",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "winston": "^3.11.0"
   },
   "devDependencies": {
-    "@types/node": "^20.10.5",
-    "tsx": "^4.7.0",
-    "typescript": "^5.3.3"
-  }
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "jest": "^29.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  },
+  "keywords": [
+    "landomo",
+    "scraper",
+    "real-estate",
+    "usa",
+    "zillow"
+  ],
+  "author": "Landomo",
+  "license": "UNLICENSED"
 }
