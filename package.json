@@ -1,0 +1,22 @@
+{
+  "name": "@landomo/scraper-usa-zillow",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Zillow real estate scraper using Playwright with API interception",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsx src/index.ts",
+    "scrape": "tsx src/scraper.ts",
+    "test:api": "tsx src/test-api.ts"
+  },
+  "dependencies": {
+    "ioredis": "^5.9.2",
+    "playwright": "^1.49.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  }
+}
